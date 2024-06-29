@@ -28,9 +28,6 @@
                     <td> 4</td>
                     <td>X</td>
                   </tr>
-              
- 
-    
                 </table>
               </div>
               <!-- /.card-body -->

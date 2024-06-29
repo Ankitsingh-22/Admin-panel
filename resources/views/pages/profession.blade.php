@@ -4,7 +4,6 @@
   <div class="card">
     <div class="card-header">
       <div class="container-fluid">
-        <h3 class="card-title">Feedback Data</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
