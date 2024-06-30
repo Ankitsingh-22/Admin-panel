@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\BusinessApplicationController;
+use App\Http\Controllers\CarApplicationController;
+use App\Http\Controllers\EducationLoanController;
+use App\Http\Controllers\HomeLoanController;
+use App\Http\Controllers\ProfessionalLoanApplicationController;
+use App\Http\Controllers\SalariedLoanApplicationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +24,16 @@ Route::get('/home', function () {
 
 Route::get('/form', [FormController::class, 'showForm']);
 Route::post('/submit', [FormController::class, 'submitForm']);
+Route::get('/business-applications', [BusinessApplicationController::class, 'index']);
+Route::post('/business-applications', [BusinessApplicationController::class, 'store']);
+Route::post('/car-applications', [CarApplicationController::class, 'store']);
+Route::apiResource('education-loans', EducationLoanController::class);
+Route::get('/home-loans', [HomeLoanController::class, 'index']);
+Route::post('/home-loans', [HomeLoanController::class, 'store']);
+Route::post('/professional-loan-applications', [ProfessionalLoanApplicationController::class, 'store']);
+Route::apiResource('salaried-loan-applications', SalariedLoanApplicationController::class);
+
+
 
 Route::get('/complaints', function () {
     return view('pages/complaints');
@@ -62,3 +78,5 @@ Route::get('/payments', function () {
 Route::get('/favicon', function () {
     return view('pages/favicon');
 });
+
+
